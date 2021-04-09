@@ -1,15 +1,6 @@
 <?php
-
-		$host = "tcp:localhost17.database.windows.net,1433";
-		$user = "patels18@localhost17";
-		$pwd  = "Cloudif9bre";
-		$db   = "patels18_db";
-	    	$conn = new PDO("sqlsrv:Server = $host; Database = $db", $user, $pwd);
-	    	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
-if($conn === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-
+$connectionInfo = array("UID" => "patels18", "pwd" => "Cloudif9bre", "Database" => "patels18_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:localhost17.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
 
 ?>
