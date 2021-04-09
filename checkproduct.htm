@@ -1,0 +1,112 @@
+<html>
+<head>
+ <title> check product </title> 
+<style>
+body {
+  background-image: url('addproduct_background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  text-align: center;
+
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] 
+{
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+label {
+  color: white;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+h1
+{
+ color:white;
+ text-align: center;
+ text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+ font-family: charcoal;
+}
+
+</style>
+</head> 
+<body>
+<CENTER>
+<form method="post" action="checkproduct.php">
+        <div class="container">
+    		<h1 style="font-weight: bold;">Check your product information here</h1>
+    
+    			
+    			<label for="ProductName"><b>ProductName</b></label>
+    				<input type="text" placeholder="Enter ProductName" name="ProductName" required>
+    </br>
+    			<label for="Price"><b>Price</b></label>
+    				<input type="text" placeholder="Enter Price" name="Price" required>
+    </br>
+			<label for="DesignerName"><b>DesignerName</b></label>
+    				<input type="text" placeholder="Enter Designer Name" name="DesignerName" required>
+    </br>
+
+    
+			<hr>
+			<button type="submit" class="registerbtn">Let's Check</button>
+  </div>
+  
+
+</form>
+</CENTER>
+</body>
+</html>

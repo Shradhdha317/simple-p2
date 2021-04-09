@@ -1,0 +1,116 @@
+<html>
+<head>
+<title> Add Product </title> 
+
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-image: url('addproduct_background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover ;
+  text-align: center;
+
+}
+
+input[type=text], input[type=password] 
+{
+  width: 30%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+  
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+label {
+   color: white;
+   text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+h1
+{
+ color:white;
+ text-align: center;
+ font-family: charcoal;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+
+
+</head> 
+<body bgcolor="black">
+
+<form method="post" action="addnewproduct.php">
+
+<div class="container" style="border:3px; border-style:solid; border-color:#130f40; padding: 1em;">
+    <h1 style="font-weight: bold; text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;">Enter your product information by filling out this form </h1>
+    
+    <hr>
+    
+    <label for="UserName"><b>Product Name</b></label> 
+    <input type="text" placeholder="Enter ProductName" name="ProductName" required>
+    </br>
+
+    <label for="Price"><b>Price</b></label>
+    <input type="text" placeholder="Enter Price" name="Price" required>
+    </br>
+    <label for="DesignerName"><b>Designer Name</b></label>
+    <input type="text" placeholder="Enter DesignerName" name="DesignerName" required>
+    </br>
+        <hr>
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+  
+  <div class="signin">
+    <p>Wants to check product information? <a href="checkproduct.htm">Check products</a>.</p>
+  </div>
+</form>
+</body>
+</html>
