@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = ("INSERT INTO products (product, price, designer) VALUES (?, ?, ?)");
          
         // Use DB info in $link from config.php to construct MySQL message/command
-        if($stmt = sqlsrv_prepare($link, $sql)){
+        if($stmt = sqlsrv_prepare($conn, $sql)){
 
             // Bind variables to the prepared statement as parameters
             sqlsrv_stmt_bind_param($stmt, "sss", $param_product, $param_price, $param_designer);
@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
     // Close connection
-    sqlsrv_close($link);
+    sqlsrv_close($conn);
 }
 ?>
 
