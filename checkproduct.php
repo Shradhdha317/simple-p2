@@ -16,9 +16,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
 
         // Prepare a select statement
-        $sql = ("SELECT product, price, designer FROM products WHERE product = '?'");
+        $sql = "SELECT product, price, designer FROM products WHERE product = ?";
         
-                if($stmt = mysqli_prepare($link, $sql)){
+                if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_product);
             
@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     
     // Close connection
-    mysqli_close($link);
+    mysqli_close($con);
 }
 ?>
  

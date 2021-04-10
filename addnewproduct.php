@@ -14,13 +14,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $designer = trim($_POST["DesignerName"]);   
         
     // Prepare an insert statement
-    $sql = ("INSERT INTO products (product, price, designer) VALUES (?, ?, ?)");
+    $sql = "INSERT INTO products (product, price, designer) VALUES (?, ?, ?)";
          
         // Use DB info in $link from config.php to construct MySQL message/command
-        if($stmt = sqlsrv_prepare($conn, $sql)){
+        if($stmt = mysqli_prepare($con, $sql)){
 
             // Bind variables to the prepared statement as parameters
-            sqlsrv_stmt_bind_param($stmt, "sss", $param_product, $param_price, $param_designer);
+            mysqli_stmt_bind_param($stmt, "sss", $param_product, $param_price, $param_designer);
             
             // Set parameters
             $param_product = $product;
@@ -28,10 +28,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_designer = $designer; 
             
             // Attempt to EXECUTE the prepared statement
-            sqlsrv_stmt_execute($stmt);            
+            mysqli_stmt_execute($stmt);            
 
             // Close statement
-            sqlsrv_stmt_close($stmt);
+            mysqli_stmt_close($stmt);
             $message = "Congratulations! Your product has been Successfully Registered!";
 
         } else {
@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
     // Close connection
-    sqlsrv_close($conn);
+    mysqli_close($con);
 }
 ?>
 
