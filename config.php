@@ -1,6 +1,6 @@
 <?php
-$connectionInfo = array("UID" => "patels18", "pwd" => "Cloudif9bre", "Database" => "patels18_db", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:localhost17.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
+$con=mysqli_init(); 
+mysqli_ssl_set($con, NULL, NULL, "C:/Users/shrad/Desktop/Github for cloud management/DigiCertGlobalRootG2.crt.pem", NULL, NULL); 
+mysqli_real_connect($con, "patels18.mysql.database.azure.com", "patels18@patels18", "Krishna@0115", "patels18_db", 3306);
 
 ?>
