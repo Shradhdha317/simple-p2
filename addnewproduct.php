@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $designer = trim($_POST["DesignerName"]);   
         
     // Prepare an insert statement
-    $sql = "INSERT INTO products (product, price, designer) VALUES (?, ?, ?)";
+    $sql = ("INSERT INTO products (product, price, designer) VALUES (?, ?, ?)");
          
         // Use DB info in $link from config.php to construct MySQL message/command
         if($stmt = mysqli_prepare($link, $sql)){
